@@ -4,11 +4,10 @@ public interface IBaseRepository<T, in TId>
   where T : class
   where TId : struct
 {
-  Task AddAsync(T data);
-  Task<IEnumerable<T>> FindAllAsync();
-  Task<T> FindByIdAsync(TId id);
-  Task UpdateAsync(T data);
-  Task RemoveAsync(TId id);
-
+  void Add(T data);
+  IEnumerable<T> FindAll();
+  T FindById(TId id);
+  void Update(T data);
+  void Remove(T data);
   void Dispose();
 }
